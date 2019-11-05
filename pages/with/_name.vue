@@ -8,6 +8,7 @@
     >
       <div id="section0" class="section">
         <div>
+          <h1 class="text-box">{{ $route.params.name }} 님</h1>
           <h1 class="text-box">저희 결혼식에 초대합니다</h1>
           <br />
           <h3 class="text-box">
@@ -19,6 +20,7 @@
       </div>
       <div id="section1" class="section">
         <div>
+          <h1 class="text-box">{{ $route.params.name }} 님</h1>
           <h1 class="text-box">저희 결혼식에 초대합니다</h1>
           <br />
           <h3 class="text-box">
@@ -30,6 +32,7 @@
       </div>
       <div id="section2" class="section">
         <div>
+          <h1 class="text-box">{{ $route.params.name }} 님</h1>
           <h1 class="text-box">저희 결혼식에 초대합니다</h1>
           <br />
           <h3 class="text-box">
@@ -53,6 +56,11 @@ export default {
         responsiveWidth: 200,
         licenseKey: '6FA7605F-5A804CBF-B02D5636-DC599F82'
       }
+    }
+  },
+  middleware({ router, params }) {
+    if (!params.name) {
+      router.push({ path: '/' })
     }
   }
 }
