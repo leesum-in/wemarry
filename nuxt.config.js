@@ -11,10 +11,35 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: '2019-12-14 토요일 오후 1시 고려대 교우회관'
+        content: '19/12/14 토요일 오후 1시 고려대 교우회관'
+      },
+      {
+        hid: 'og:url',
+        name: 'og:url',
+        content: 'https://sumin-bohee.wemarry.in'
+      },
+      {
+        hid: 'og:title',
+        name: 'og:title',
+        content: '수민과 보희의 결혼식에 초대합니다.'
+      },
+      {
+        hid: 'og:image',
+        name: 'og:image',
+        content: 'https://sumin-bohee.wemarry.in/img/DSC00016_resize.jpg'
+      },
+      {
+        hid: 'og:description',
+        name: 'og:description',
+        content: '19/12/14 토요일 오후 1시 고려대 교우회관'
       }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    script: [
+      {
+        src: '/fullpage.parallax.min.js'
+      }
+    ]
   },
   /*
    ** Customize the progress-bar color
@@ -55,6 +80,7 @@ export default {
     /*
      ** You can extend webpack config here
      */
+    standalone: true,
     extend(config, ctx) {}
   }
 }
