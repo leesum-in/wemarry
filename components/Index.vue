@@ -44,6 +44,10 @@
         </div>
       </div>
       <div id="section2" class="section">
+        <div id="slide2-0" class="slide">
+          <div class="fp-bg" :style="getSlideStyle(0)"></div>
+          <h2 class="text-bot">GALLERY &gt;&gt;</h2>
+        </div>
         <div
           v-for="index in 10"
           :id="'slide2-' + index"
