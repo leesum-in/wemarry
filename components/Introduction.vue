@@ -1,5 +1,5 @@
 <template>
-  <div id="section0" class="section">
+  <div id="section1" class="section">
     <div class="fp-bg"></div>
     <h2 v-if="name">{{ name }}님</h2>
     <h2>저희 결혼식에 초대합니다</h2>
@@ -13,8 +13,8 @@
       2019.12.14 (토) 오후 1시<br />
       고려대학교 교우회관
     </h3>
-    <div class="section0-border"></div>
-    <div class="section0-border-inner"></div>
+    <div class="section1-border"></div>
+    <div class="section1-border-inner"></div>
   </div>
 </template>
 
@@ -31,14 +31,14 @@ export default {
 </script>
 
 <style scoped>
-#section0 .fp-bg {
+#section1 .fp-bg {
   background-image: url(/img/introduction.png);
   background-size: cover;
   background-position: center 80%;
   opacity: 0.4;
 }
 
-.section0-border {
+.section1-border {
   position: absolute;
   top: 0;
   left: 0;
@@ -47,7 +47,7 @@ export default {
   border: 15px solid #1d2c46;
 }
 
-.section0-border-inner {
+.section1-border-inner {
   position: absolute;
   top: 0;
   left: 0;

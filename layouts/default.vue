@@ -31,4 +31,43 @@ h6 {
   box-sizing: border-box;
   margin: 0;
 }
+
+.arrow {
+  cursor: pointer;
+  width: 50px;
+  height: 40px;
+  -webkit-appearance: none;
+  background: transparent;
+  border: 0;
+  outline: 0;
+}
+
+.arrow svg {
+  padding: 5px;
+}
+
+.left:hover polyline,
+.left:focus polyline {
+  stroke-width: 9;
+}
+
+.left:active polyline {
+  stroke-width: 12;
+  transition: all 100ms ease-in-out;
+}
+
+.right:hover polyline,
+.right:focus polyline {
+  stroke-width: 9;
+}
+
+.right:active polyline {
+  stroke-width: 12;
+  transition: all 100ms ease-in-out;
+}
+
+polyline {
+  stroke-width: 6;
+  transition: all 250ms ease-in-out;
+}
 </style>

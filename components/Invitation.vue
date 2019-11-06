@@ -1,5 +1,5 @@
 <template>
-  <div id="section1" class="section">
+  <div id="section2" class="section">
     <div class="fp-bg"></div>
     <p class="text-box">평생을 같이하고 싶은 사람을 만났습니다.</p>
     <p class="text-box">아껴주고 이해하며 사랑하고 살겠습니다.</p>
@@ -28,7 +28,7 @@ export default {
 </script>
 
 <style scoped>
-#section1 .fp-bg {
+#section2 .fp-bg {
   background-image: url(/img/invitation.png);
   background-size: cover;
   background-position: 49% 80%;

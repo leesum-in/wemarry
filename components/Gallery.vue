@@ -1,14 +1,14 @@
 <template>
-  <div id="section2" class="section">
-    <div id="slide2-0" class="slide">
+  <div id="section3" class="section">
+    <div id="slide3-0" class="slide">
       <div class="fp-bg" :style="getSlideStyle(0)"></div>
-      <h2 class="text-bot" @click="$emit('click-gallery')">
-        GALLERY&gt;&gt;
-      </h2>
+      <div class="arrow-container" @click="$emit('move', 3, 1)">
+        <arrow-right />
+      </div>
     </div>
     <div
       v-for="index in 10"
-      :id="'slide2-' + index"
+      :id="'slide3-' + index"
       :key="index"
       class="slide slide-poem"
     >
@@ -19,6 +19,7 @@
 </template>
 
 <script>
+import ArrowRight from '@/components/ArrowRight'
 const slidesPoem = [
   '사람이 온다는 것은',
   '실은 어마어마한 일이다.',
@@ -48,6 +49,16 @@ const verticals = [
 
 export default {
   name: 'Gallery',
+  components: { ArrowRight },
+  computed: {
+    arrowStyle() {
+      return {
+        position: 'absolute',
+        top: '50%',
+        right: '5px'
+      }
+    }
+  },
   methods: {
     getSlideStyle(index) {
       return {
@@ -66,5 +77,11 @@ export default {
 <style scoped>
 .slide-poem .text-box {
   margin-top: 100px;
+}
+
+.arrow-container {
+  position: absolute;
+  top: 48%;
+  right: 5px;
 }
 </style>

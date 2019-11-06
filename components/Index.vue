@@ -8,7 +8,8 @@
     >
       <introduction :name="name" />
       <invitation />
-      <gallery :fullpage="$refs.fullpage" @click-gallery="slideGallery" />
+      <gallery :fullpage="$refs.fullpage" @move="moveTo" />
+      <guest-book :name="name" @move="moveTo" />
     </full-page>
   </div>
 </template>
@@ -17,9 +18,10 @@
 import Introduction from '@/components/Introduction'
 import Invitation from '@/components/Invitation'
 import Gallery from '@/components/Gallery'
+import GuestBook from '@/components/GuestBook'
 export default {
   name: 'Index',
-  components: { Gallery, Invitation, Introduction },
+  components: { GuestBook, Gallery, Invitation, Introduction },
   props: {
     name: {
       type: String,
@@ -45,6 +47,11 @@ export default {
     slideGallery() {
       try {
         this.$refs.fullpage.api.moveTo(3, 1)
+      } catch (e) {}
+    },
+    moveTo(section, slide) {
+      try {
+        this.$refs.fullpage.api.moveTo(section, slide)
       } catch (e) {}
     }
   }
