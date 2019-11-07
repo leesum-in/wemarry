@@ -37,7 +37,7 @@ export default {
         content: '19/12/14 토요일 오후 1시 고려대 교우회관'
       }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico?v2' }],
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.png' }],
     script: [
       {
         src: '/fullpage.parallax.min.js'
