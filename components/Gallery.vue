@@ -40,18 +40,18 @@ const slidesPoem = [
   '< 정현종 "방문객" 중 >'
 ]
 
-const verticals = [
-  '70%',
-  'center',
-  'center',
-  'center',
-  'center',
-  '51%',
-  '42%',
-  'center',
-  '45%',
-  'center',
-  'center'
+const positions = [
+  '70% 80%',
+  'center 10%',
+  'center 40%',
+  'center 10%',
+  'center 50%',
+  '51% 40%',
+  '42% 15%',
+  'center 50%',
+  '45% 60%',
+  'center 70%',
+  'center 10%'
 ]
 
 export default {
@@ -71,7 +71,7 @@ export default {
       return {
         'background-image': `url(/img/gallery${index}.png)`,
         'background-size': 'cover',
-        'background-position': `${verticals[index]} 80%`
+        'background-position': positions[index]
       }
     },
     getPoem(index) {

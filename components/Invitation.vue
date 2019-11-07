@@ -31,7 +31,7 @@ export default {
 #section2 .fp-bg {
   background-image: url(/img/invitation.png);
   background-size: cover;
-  background-position: 49% 80%;
+  background-position: 49% 10%;
 }
 
 .greeting-name {

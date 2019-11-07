@@ -34,7 +34,7 @@ export default {
 #section1 .fp-bg {
   background-image: url(/img/introduction.png);
   background-size: cover;
-  background-position: center 80%;
+  background-position: center 10%;
   opacity: 0.4;
 }
 

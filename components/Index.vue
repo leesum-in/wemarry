@@ -40,7 +40,8 @@ export default {
           type: 'reveal'
         },
         loopBottom: true,
-        normalScrollElements: '.normal-scroll'
+        normalScrollElements: '.normal-scroll',
+        anchors: ['1', '2', '3', '4', '5']
       }
     }
   },

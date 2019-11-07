@@ -175,7 +175,7 @@ export default {
 #slide4-1 .fp-bg {
   background-image: url(/img/guestbook.png);
   background-size: cover;
-  background-position: 49% 80%;
+  background-position: 49% 40%;
 }
 
 .message-container {
@@ -186,7 +186,7 @@ export default {
 }
 
 .message-list {
-  max-height: 400px;
+  max-height: 50vh;
   overflow: auto;
 }
 
@@ -232,7 +232,7 @@ export default {
 #slide4-2 .fp-bg {
   background-image: url(/img/guestbook2.png);
   background-size: cover;
-  background-position: 49% 80%;
+  background-position: 49% 40%;
 }
 
 /*form styles*/
