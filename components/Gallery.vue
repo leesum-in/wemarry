@@ -14,6 +14,13 @@
     >
       <div class="fp-bg" :style="getSlideStyle(index)"></div>
       <h5 v-if="getPoem(index)" class="text-box" v-html="getPoem(index)"></h5>
+      <div
+        v-if="index < 10"
+        class="arrow-container"
+        @click="$emit('move', 3, index + 1)"
+      >
+        <arrow-right />
+      </div>
     </div>
   </div>
 </template>

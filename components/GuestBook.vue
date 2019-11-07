@@ -3,7 +3,7 @@
     <div id="slide4-1" class="slide">
       <div class="fp-bg"></div>
       <h3 class="text-box">신랑 신부에게 전하는 말</h3>
-      <div class="message-container">
+      <div class="message-container normal-scroll">
         <div class="message-list">
           <div
             v-for="message in currentMessages"
@@ -37,7 +37,7 @@
     </div>
     <div id="slide4-2" class="slide">
       <div class="fp-bg"></div>
-      <div id="msform">
+      <div id="msform" class="normal-scroll">
         <fieldset>
           <input
             v-model="form.name"
@@ -182,8 +182,12 @@ export default {
   margin: 10px auto;
   border: 1px solid #1d2c46;
   width: 90%;
-  min-height: 300px;
   background: rgba(255, 255, 255, 0.4);
+}
+
+.message-list {
+  max-height: 400px;
+  overflow: auto;
 }
 
 .message {
@@ -213,8 +217,6 @@ export default {
   margin-top: 3px;
   text-align: left;
   color: #444;
-  max-height: 65px;
-  height: 61px;
   min-height: 61px;
   overflow: hidden;
   padding: 0 3px;
@@ -235,7 +237,8 @@ export default {
 
 /*form styles*/
 #msform {
-  width: 400px;
+  width: 100%;
+  max-width: 400px;
   margin: 50px auto;
   text-align: center;
   position: relative;

@@ -26,7 +26,7 @@ export default {
       {
         hid: 'og:image',
         name: 'og:image',
-        content: 'https://sumin-bohee.wemarry.in/img/introduction.jpg'
+        content: 'https://sumin-bohee.wemarry.in/img/introduction.png'
       },
       {
         hid: 'og:description',

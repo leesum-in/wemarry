@@ -39,7 +39,8 @@ export default {
         parallaxOptions: {
           type: 'reveal'
         },
-        loopBottom: true
+        loopBottom: true,
+        normalScrollElements: '.normal-scroll'
       }
     }
   },
