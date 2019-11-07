@@ -3,6 +3,12 @@ export default {
   /*
    ** Headers of the page
    */
+  pwa: {
+    manifest: {
+      name: '19/12/14 오후1시 고려대학교 교우회관',
+      short_name: '이수민 ♥ 이보희'
+    }
+  },
   head: {
     htmlAttrs: {
       lang: 'ko'
