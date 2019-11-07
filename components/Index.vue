@@ -8,7 +8,11 @@
     >
       <introduction :name="name" />
       <invitation />
-      <gallery :fullpage="$refs.fullpage" @move="moveTo" />
+      <gallery
+        :fullpage="$refs.fullpage"
+        @move="moveTo"
+        :load-gallery="loadGallery"
+      />
       <guest-book :name="name" @move="moveTo" />
     </full-page>
   </div>
@@ -41,20 +45,21 @@ export default {
         },
         loopBottom: true,
         normalScrollElements: '.normal-scroll',
-        anchors: ['1', '2', '3', '4', '5']
-      }
+        afterLoad: this.afterLoad
+      },
+      loadGallery: false
     }
   },
   methods: {
-    slideGallery() {
-      try {
-        this.$refs.fullpage.api.moveTo(3, 1)
-      } catch (e) {}
-    },
     moveTo(section, slide) {
       try {
         this.$refs.fullpage.api.moveTo(section, slide)
       } catch (e) {}
+    },
+    afterLoad(origin, dest, dir) {
+      if (dest.index === 2) {
+        this.loadGallery = true
+      }
     }
   }
 }

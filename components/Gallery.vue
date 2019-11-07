@@ -57,6 +57,12 @@ const positions = [
 export default {
   name: 'Gallery',
   components: { ArrowRight },
+  props: {
+    loadGallery: {
+      type: Boolean,
+      default: false
+    }
+  },
   computed: {
     arrowStyle() {
       return {
@@ -68,11 +74,15 @@ export default {
   },
   methods: {
     getSlideStyle(index) {
-      return {
-        'background-image': `url(/img/gallery${index}.png)`,
-        'background-size': 'cover',
-        'background-position': positions[index]
+      if (index === 0 || this.loadGallery) {
+        return {
+          'background-image': `url(/img/gallery${index}.png)`,
+          'background-size': 'cover',
+          'background-position': positions[index]
+        }
       }
+
+      return {}
     },
     getPoem(index) {
       return slidesPoem[index - 1] || ''

@@ -85,15 +85,6 @@ export default {
       }
     }
   },
-  computed: {
-    lastDate() {
-      if (this.currentMessages || this.currentMessages.length) {
-        const last = this.currentMessages[this.currentMessages.length - 1]
-        return last ? last.date : null
-      }
-      return null
-    }
-  },
   async mounted() {
     await this.initial()
   },

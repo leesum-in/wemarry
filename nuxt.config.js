@@ -4,6 +4,9 @@ export default {
    ** Headers of the page
    */
   head: {
+    htmlAttrs: {
+      lang: 'ko'
+    },
     title: '수민과 보희의 결혼식에 초대합니다.',
     meta: [
       { charset: 'utf-8' },
@@ -34,7 +37,7 @@ export default {
         content: '19/12/14 토요일 오후 1시 고려대 교우회관'
       }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico?v2' }],
     script: [
       {
         src: '/fullpage.parallax.min.js'
