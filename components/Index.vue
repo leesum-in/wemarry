@@ -14,6 +14,7 @@
         :load-gallery="loadGallery"
       />
       <guest-book :name="name" @move="moveTo" />
+      <location />
     </full-page>
   </div>
 </template>
@@ -23,9 +24,10 @@ import Introduction from '@/components/Introduction'
 import Invitation from '@/components/Invitation'
 import Gallery from '@/components/Gallery'
 import GuestBook from '@/components/GuestBook'
+import Location from '@/components/Location'
 export default {
   name: 'Index',
-  components: { GuestBook, Gallery, Invitation, Introduction },
+  components: { Location, GuestBook, Gallery, Invitation, Introduction },
   props: {
     name: {
       type: String,
@@ -43,6 +45,7 @@ export default {
         parallaxOptions: {
           type: 'reveal'
         },
+        loopTop: true,
         loopBottom: true,
         normalScrollElements: '.normal-scroll',
         afterLoad: this.afterLoad

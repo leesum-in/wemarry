@@ -2,8 +2,14 @@
   <div id="section3" class="section">
     <div id="slide3-0" class="slide">
       <div class="fp-bg" :style="getSlideStyle(0)"></div>
-      <div class="arrow-container" @click="$emit('move', 3, 1)">
-        <arrow-right />
+
+      <div class="content-container">
+        <h5 class="text-box">
+          사진첩
+        </h5>
+        <div class="arrow-container" @click="$emit('move', 3, 1)">
+          <arrow-right />
+        </div>
       </div>
     </div>
     <div
@@ -13,13 +19,15 @@
       class="slide slide-poem"
     >
       <div class="fp-bg" :style="getSlideStyle(index)"></div>
-      <h5 v-if="getPoem(index)" class="text-box" v-html="getPoem(index)"></h5>
-      <div
-        v-if="index < 10"
-        class="arrow-container"
-        @click="$emit('move', 3, index + 1)"
-      >
-        <arrow-right />
+      <div class="content-container">
+        <h5 v-if="getPoem(index)" class="text-box" v-html="getPoem(index)"></h5>
+        <div
+          v-if="index < 10"
+          class="arrow-container"
+          @click="$emit('move', 3, index + 1)"
+        >
+          <arrow-right />
+        </div>
       </div>
     </div>
   </div>
@@ -76,7 +84,7 @@ export default {
     getSlideStyle(index) {
       if (index === 0 || this.loadGallery) {
         return {
-          'background-image': `url(/img/gallery${index}.png)`,
+          'background-image': `url(/img/gallery${index}.jpg)`,
           'background-size': 'cover',
           'background-position': positions[index]
         }
@@ -92,13 +100,16 @@ export default {
 </script>
 
 <style scoped>
-.slide-poem .text-box {
+.text-box {
   margin-top: 100px;
 }
-
+.content-container {
+  position: relative;
+  margin-top: 100px;
+}
 .arrow-container {
   position: absolute;
-  top: 48%;
-  right: 5px;
+  right: 0;
+  top: -6px;
 }
 </style>

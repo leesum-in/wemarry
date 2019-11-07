@@ -35,7 +35,7 @@ export default {
       {
         hid: 'og:image',
         name: 'og:image',
-        content: 'https://sumin-bohee.wemarry.in/img/introduction.png'
+        content: 'https://sumin-bohee.wemarry.in/img/introduction.jpg'
       },
       {
         hid: 'og:description',
@@ -61,7 +61,10 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [{ src: '~/plugins/fullpage', ssr: false }],
+  plugins: [
+    { src: '~/plugins/fullpage', ssr: false },
+    { src: '~/plugins/kakao-map', ssr: false }
+  ],
   /*
    ** Nuxt.js dev-modules
    */

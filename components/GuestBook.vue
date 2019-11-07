@@ -164,7 +164,7 @@ export default {
 
 <style scoped>
 #slide4-1 .fp-bg {
-  background-image: url(/img/guestbook.png);
+  background-image: url(/img/guestbook.jpg);
   background-size: cover;
   background-position: 49% 40%;
 }
@@ -173,11 +173,12 @@ export default {
   margin: 10px auto;
   border: 1px solid #1d2c46;
   width: 90%;
+  max-width: 600px;
   background: rgba(255, 255, 255, 0.4);
 }
 
 .message-list {
-  max-height: 50vh;
+  max-height: 65vh;
   overflow: auto;
 }
 
@@ -208,7 +209,7 @@ export default {
   margin-top: 3px;
   text-align: left;
   color: #444;
-  min-height: 61px;
+  min-height: 50px;
   overflow: hidden;
   padding: 0 3px;
 }
@@ -221,7 +222,7 @@ export default {
 }
 
 #slide4-2 .fp-bg {
-  background-image: url(/img/guestbook2.png);
+  background-image: url(/img/guestbook2.jpg);
   background-size: cover;
   background-position: 49% 40%;
 }

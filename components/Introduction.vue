@@ -32,7 +32,7 @@ export default {
 
 <style scoped>
 #section1 .fp-bg {
-  background-image: url(/img/introduction.png);
+  background-image: url(/img/introduction.jpg);
   background-size: cover;
   background-position: center 10%;
   opacity: 0.4;

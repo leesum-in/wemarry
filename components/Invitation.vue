@@ -29,7 +29,7 @@ export default {
 
 <style scoped>
 #section2 .fp-bg {
-  background-image: url(/img/invitation.png);
+  background-image: url(/img/invitation.jpg);
   background-size: cover;
   background-position: 49% 10%;
 }
