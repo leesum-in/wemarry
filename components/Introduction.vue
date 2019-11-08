@@ -46,7 +46,7 @@ export default {
   left: 0;
   width: 100%;
   height: 100%;
-  border: 15px solid #1d2c46;
+  border: 5px solid #1d2c46;
 }
 
 .section1-border-inner {
@@ -55,7 +55,7 @@ export default {
   left: 0;
   bottom: 0;
   right: 0;
-  margin: 20px;
+  margin: 10px;
   border: 1px solid #1d2c46;
 }
 
@@ -71,5 +71,11 @@ export default {
   text-decoration: none;
   color: #2f5a85;
   font-weight: bold;
+}
+
+@media screen and (max-width: 320px) {
+  h2 {
+    font-size: 1.4em;
+  }
 }
 </style>

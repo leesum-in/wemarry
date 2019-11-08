@@ -41,7 +41,8 @@ const positions = [
   'center 50%',
   '45% 60%',
   'center 70%',
-  'center 10%'
+  'center 10%',
+  'center 50%'
 ]
 
 export default {

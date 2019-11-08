@@ -56,4 +56,13 @@ export default {
   content: '';
   clear: both;
 }
+
+@media screen and (max-width: 330px) {
+  .text-box {
+    font-size: 13px;
+  }
+  h5 {
+    font-size: 0.7em;
+  }
+}
 </style>

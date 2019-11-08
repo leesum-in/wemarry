@@ -128,4 +128,12 @@ export default {
 .bus-info-content {
   font-size: 14px;
 }
+@media screen and (max-width: 320px) {
+  .bus-info {
+    padding: 20px 5px;
+  }
+  .bus-info-content {
+    font-size: 13px;
+  }
+}
 </style>
