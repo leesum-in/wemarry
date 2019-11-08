@@ -1,20 +1,20 @@
 <template>
-  <div class="container">
+  <div class="container" :class="{ 'hide-arrow': hideArrow }">
     <full-page
       id="fullpage"
       ref="fullpage"
       :options="options"
       class="fp-auto-height-responsive"
     >
-      <introduction :name="name" />
+      <introduction :name="name" @move="moveTo" />
       <invitation />
       <gallery
         :fullpage="$refs.fullpage"
-        @move="moveTo"
         :load-gallery="loadGallery"
+        @move="moveTo"
       />
-      <guest-book :name="name" @move="moveTo" />
       <location />
+      <guest-book :name="name" @move="moveTo" />
     </full-page>
   </div>
 </template>
@@ -37,9 +37,8 @@ export default {
   data() {
     return {
       options: {
-        navigation: false,
+        controlArrows: true,
         licenseKey: '6FA7605F-5A804CBF-B02D5636-DC599F82',
-        controlArrows: false,
         parallax: true,
         parallaxKey: 'd2VtYXJyeS5pbl9LTThjR0Z5WVd4c1lYZz05MUk=',
         parallaxOptions: {
@@ -48,9 +47,12 @@ export default {
         loopTop: true,
         loopBottom: true,
         normalScrollElements: '.normal-scroll',
-        afterLoad: this.afterLoad
+        touchSensitivity: 7,
+        afterLoad: this.afterLoad,
+        recodeHistory: false
       },
-      loadGallery: false
+      loadGallery: false,
+      hideArrow: true
     }
   },
   methods: {
@@ -60,9 +62,12 @@ export default {
       } catch (e) {}
     },
     afterLoad(origin, dest, dir) {
-      if (dest.index === 2) {
+      const galleryIndex = 2
+      if (dest.index === galleryIndex) {
         this.loadGallery = true
       }
+
+      this.hideArrow = dest.index !== galleryIndex
     }
   }
 }
@@ -102,5 +107,14 @@ ol,
 li,
 dl {
   list-style: none;
+}
+
+.hide-arrow .fp-controlArrow {
+  opacity: 0;
+}
+
+.fp-controlArrow {
+  opacity: 0.5;
+  transition: all 0.5s ease-in;
 }
 </style>

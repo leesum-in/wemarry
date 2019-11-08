@@ -2,15 +2,6 @@
   <div id="section3" class="section">
     <div id="slide3-0" class="slide">
       <div class="fp-bg" :style="getSlideStyle(0)"></div>
-
-      <div class="content-container">
-        <h5 class="text-box">
-          사진첩
-        </h5>
-        <div class="arrow-container" @click="$emit('move', 3, 1)">
-          <arrow-right />
-        </div>
-      </div>
     </div>
     <div
       v-for="index in 10"
@@ -19,22 +10,14 @@
       class="slide slide-poem"
     >
       <div class="fp-bg" :style="getSlideStyle(index)"></div>
-      <div class="content-container">
-        <h5 v-if="getPoem(index)" class="text-box" v-html="getPoem(index)"></h5>
-        <div
-          v-if="index < 10"
-          class="arrow-container"
-          @click="$emit('move', 3, index + 1)"
-        >
-          <arrow-right />
-        </div>
-      </div>
+      <h5 v-if="getPoem(index)" class="text-box" v-html="getPoem(index)"></h5>
     </div>
   </div>
 </template>
 
 <script>
-import ArrowRight from '@/components/ArrowRight'
+/* eslint-disable spaced-comment */
+
 const slidesPoem = [
   '사람이 온다는 것은',
   '실은 어마어마한 일이다.',
@@ -44,8 +27,7 @@ const slidesPoem = [
   '그의 미래와 함께 오기 때문이다.',
   '한 사람의 일생이 오기 때문이다.',
   '부서지기 쉬운 그래서 부서지기도 했을',
-  '마음이 오는 것이다',
-  '< 정현종 "방문객" 중 >'
+  '마음이 오는 것이다'
 ]
 
 const positions = [
@@ -64,7 +46,6 @@ const positions = [
 
 export default {
   name: 'Gallery',
-  components: { ArrowRight },
   props: {
     loadGallery: {
       type: Boolean,
@@ -101,15 +82,6 @@ export default {
 
 <style scoped>
 .text-box {
-  margin-top: 100px;
-}
-.content-container {
-  position: relative;
-  margin-top: 100px;
-}
-.arrow-container {
-  position: absolute;
-  right: 0;
-  top: -6px;
+  margin: 40vh auto 0;
 }
 </style>

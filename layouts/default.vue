@@ -12,6 +12,7 @@
   font-weight: normal;
   font-style: normal;
 }
+
 html {
   font-family: 'RIDIBatang', 'Source Sans Pro', 'Segoe UI', serif;
   color: #333;

@@ -18,11 +18,6 @@ export default {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       {
-        hid: 'description',
-        name: 'description',
-        content: '19/12/14 토요일 오후 1시 고려대 교우회관'
-      },
-      {
         hid: 'og:url',
         name: 'og:url',
         content: 'https://sumin-bohee.wemarry.in'
@@ -36,11 +31,6 @@ export default {
         hid: 'og:image',
         name: 'og:image',
         content: 'https://sumin-bohee.wemarry.in/img/introduction.jpg'
-      },
-      {
-        hid: 'og:description',
-        name: 'og:description',
-        content: '19/12/14 토요일 오후 1시 고려대 교우회관'
       }
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.png' }],

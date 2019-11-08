@@ -1,6 +1,8 @@
 <template>
   <div id="section1" class="section">
     <div class="fp-bg"></div>
+    <div class="section1-border"></div>
+    <div class="section1-border-inner"></div>
     <h2 v-if="name">{{ name }}님</h2>
     <h2>저희 결혼식에 초대합니다</h2>
     <br />
@@ -10,11 +12,11 @@
       이보희
     </h3>
     <h3 class="save-the-date">
-      2019.12.14 (토) 오후 1시<br />
-      고려대학교 교우회관
+      <p>
+        2019.12.14 (토) 오후 1시<br />
+        고려대학교 교우회관
+      </p>
     </h3>
-    <div class="section1-border"></div>
-    <div class="section1-border-inner"></div>
   </div>
 </template>
 
@@ -63,6 +65,11 @@ export default {
   bottom: 20px;
   padding: 10px 0;
   color: #1d2c46;
-  //background: rgba(0, 0, 0, 0.1);
+}
+
+.save-the-date a {
+  text-decoration: none;
+  color: #2f5a85;
+  font-weight: bold;
 }
 </style>

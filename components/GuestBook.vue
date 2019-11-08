@@ -28,7 +28,7 @@
         </div>
         <div class="message-nav">
           <arrow-left @click="prev" />
-          <button class="submit action-button" @click="$emit('move', 4, 1)">
+          <button class="submit action-button" @click="$emit('move', 5, 1)">
             작성하기
           </button>
           <arrow-right @click="next" />
@@ -100,14 +100,19 @@ export default {
     },
     async prev() {
       const result = await messageApi
-        .orderBy('date', 'desc')
-        .endBefore(this.start)
+        .orderBy('date', 'asc')
+        .startAfter(this.start)
         .limit(5)
         .get()
       if (result.docs.length) {
-        this.start = result.docs[0]
-        this.end = result.docs[result.docs.length - 1]
-        this.currentMessages = result.docs.map(this.docToData)
+        this.end = result.docs[0]
+        this.start = result.docs[result.docs.length - 1]
+
+        const currentMessages = result.docs.map(this.docToData)
+        currentMessages.sort((a, b) => {
+          return b.timestamp - a.timestamp
+        })
+        this.currentMessages = currentMessages
       }
     },
     async next() {
@@ -129,11 +134,12 @@ export default {
         id: doc.id,
         name,
         content,
-        date: this.formatDate(date)
+        date: this.formatDate(date),
+        timestamp: date.seconds
       }
     },
     formatDate(date) {
-      return dayjs.unix(date.seconds).format('YYYY/MM/DD HH:mm')
+      return dayjs.unix(date.seconds).format('YY/MM/DD HH:mm')
     },
     async submit() {
       if (!this.form.name || !this.form.content) {
@@ -149,7 +155,7 @@ export default {
       this.form.content = ''
 
       await this.initial()
-      this.$emit('move', 4, 0)
+      this.$emit('move', 5, 0)
     },
     hasNext(result) {
       if (this.currentMessages.length < 5) {
@@ -192,17 +198,20 @@ export default {
 
 .message-meta {
   padding: 0 10px;
-  height: 15px;
+  min-height: 15px;
 }
 
 .message-author {
+  display: inline-block;
   float: left;
   font-weight: bold;
 }
 
 .message-date {
+  display: inline-block;
   float: right;
   font-size: 12px;
+  text-overflow: ellipsis;
 }
 
 .message-content {
