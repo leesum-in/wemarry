@@ -25,6 +25,7 @@ import Invitation from '@/components/Invitation'
 import Gallery from '@/components/Gallery'
 import GuestBook from '@/components/GuestBook'
 import Location from '@/components/Location'
+
 export default {
   name: 'Index',
   components: { Location, GuestBook, Gallery, Invitation, Introduction },
@@ -38,18 +39,18 @@ export default {
     return {
       options: {
         controlArrows: true,
+        loopHorizontal: false,
         licenseKey: '6FA7605F-5A804CBF-B02D5636-DC599F82',
         parallax: true,
         parallaxKey: 'd2VtYXJyeS5pbl9LTThjR0Z5WVd4c1lYZz05MUk=',
         parallaxOptions: {
           type: 'reveal'
         },
-        loopTop: true,
-        loopBottom: true,
         normalScrollElements: '.normal-scroll',
         touchSensitivity: 7,
         afterLoad: this.afterLoad,
-        recodeHistory: false
+        recodeHistory: false,
+        slidesNavigation: true
       },
       loadGallery: false,
       hideArrow: true
@@ -82,13 +83,13 @@ export default {
 }
 
 /* Centered texts in each section
-  * --------------------------------------- */
+    * --------------------------------------- */
 .section {
   text-align: center;
 }
 
 /* Backgrounds will cover all the section
-  * --------------------------------------- */
+    * --------------------------------------- */
 .section {
   background-size: cover;
 }
@@ -114,7 +115,15 @@ dl {
 }
 
 .fp-controlArrow {
-  opacity: 0.5;
+  opacity: 0.7;
   transition: all 0.5s ease-in;
+}
+
+.fp-slidesNav ul li a span {
+  background: #fff !important;
+}
+
+#section4 .fp-slidesNav {
+  display: none;
 }
 </style>
