@@ -1,22 +1,7 @@
-# wemarry
+# 수민과 보희의 모바일 청첩장
 
-> Our wedding invictation page
+- https://sumin-bohee.wemarry.in
+- https://sumin-bohee.wemarry.in/with/하객이름
 
-## Build Setup
-
-``` bash
-# install dependencies
-$ npm run install
-
-# serve with hot reload at localhost:3000
-$ npm run dev
-
-# build for production and launch server
-$ npm run build
-$ npm run start
-
-# generate static project
-$ npm run generate
-```
-
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+## 모바일청첩장 하객 전달용 QR코드 생성기
+- https://leesum-in.github.io/multiqrgenerator
